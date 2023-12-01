@@ -27,7 +27,7 @@ class Database:
 
     def dataframe(self) -> DataFrame:
         """returns a DataFrame containing all documents in the collection"""
-        return DataFrame(self.collection.find())
+        return DataFrame(self.collection.find()).set_index("_id")
 
     def html_table(self) -> str:
         """returns an HTML table representation of the DataFrame (or None)"""
